@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Pastel e Caldo de Cana do Miro</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="icon" href="images/fevicon.png" type="image/gif" />
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<style>
+  .btn-vermelho { background-color: #c00; color: #fff; border: none; }
+  .btn-vermelho:hover { background-color: #a00; color: #fff; }
+  h2 { margin-top: 40px; color:#c00; }
+  .produto { margin-bottom: 20px; }
+  select { margin-bottom: 10px; }
+</style>
+</head>
+<body class="main-layout">
+<!-- Loader -->
+<div class="loader_bg">
+  <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+</div>
+
+<!-- Header -->
+<header>
+<div class="header">
+   <div class="head_top">
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+               <div class="top-box">
+                  <ul class="sociel_link">
+                     <li> <a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                     <li> <a href="#"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+               <div class="top-box">
+                  <p>Desde 1999. O melhor pastel da orla. </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+            <div class="full">
+               <div class="center-desk">
+                  <div class="logo"> <a href="index.html"><img src="images/logo.jpg" alt="logo"/></a> </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
+            <div class="menu-area">
+               <div class="limit-box">
+                  <nav class="main-menu">
+                     <ul class="menu-area-main">
+                        <li> <a href="index.html">Inicio</a> </li>
+                        <li> <a href="sobre.html">Sobre</a> </li>
+                        <li class="active"> <a href="cardapio.html">Cardápio</a> </li>
+                        <li> <a href="carrinho.html">Carrinho</a> </li>
+                        <li> <a href="contato.html">Contato</a> </li>                               
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</header>
+
+<div class="container mt-5">
+<h1 class="text-center mb-5">Nosso Cardápio</h1>
+
+<!-- Pastel Salgado -->
+<h2>Pastel Salgado</h2>
+<div class="row">
+<script>
+const pastelSalgado = [
+  {nome:"De Vento", preco:4},
+  {nome:"Frango", preco:10},
+  {nome:"Frango com Queijo", preco:10},
+  {nome:"Frango com Milho", preco:10},
+  {nome:"Frango com Catupiry", preco:10},
+  {nome:"Carne", preco:10},
+  {nome:"Carne com Queijo", preco:10},
+  {nome:"Carne com Azeitona", preco:10},
+  {nome:"Carne com Catupiry", preco:10},
+  {nome:"Mussarela", preco:10},
+  {nome:"Queijo Coalho", preco:10},
+  {nome:"Queijo com Presunto", preco:10},
+  {nome:"Queijo com Calabresa", preco:10},
+  {nome:"Calabresa com Catupiry", preco:10},
+  {nome:"Três Queijos", preco:10},
+  {nome:"Misto Pizza", preco:10},
+  {nome:"Charque", preco:13},
+  {nome:"Charque com Queijo", preco:13},
+  {nome:"Charque com Catupiry", preco:13},
+  {nome:"Marguerita", preco:12},
+  {nome:"Carne do Sol", preco:12},
+  {nome:"Carne do Sol com Queijo", preco:12},
+  {nome:"Carne do Sol com Catupiry", preco:12},
+  {nome:"Palmito", preco:12},
+  {nome:"Palmito com Queijo", preco:12},
+  {nome:"Palmito com Catupiry", preco:12},
+  {nome:"Boliviano", preco:12},
+  {nome:"Camarão", preco:15},
+  {nome:"Camarão com Catupiry", preco:15},
+  {nome:"Caranguejo", preco:15},
+  {nome:"Aratu", preco:15},
+  {nome:"Atum", preco:15},
+  {nome:"Atum com Queijo", preco:15},
+  {nome:"Atum com Catupiry", preco:15},
+];
+
+pastelSalgado.forEach(p => {
+  document.write(`
+  <div class="col-md-4 produto text-center border p-3 rounded">
+    <h3>${p.nome}</h3>
+    <p>R$ ${p.preco.toFixed(2)}</p>
+    <button class="btn btn-vermelho" onclick="adicionarAoCarrinho('${p.nome}', ${p.preco})">Adicionar</button>
+  </div>`);
+});
+</script>
+</div>
+
+<!-- Pastel Doce -->
+<h2>Pastel Doce</h2>
+<div class="row">
+<script>
+const pastelDoce = [
+  {nome:"Romeu e Julieta", preco:10},
+  {nome:"Doce de Leite com Queijo", preco:10},
+  {nome:"Banana, Queijo, Canela e Açúcar", preco:10},
+  {nome:"Brigadeiro", preco:10},
+  {nome:"Eclipse (Chocolate Preto e Branco)", preco:10},
+];
+pastelDoce.forEach(p => {
+  document.write(`
+  <div class="col-md-4 produto text-center border p-3 rounded">
+    <h3>${p.nome}</h3>
+    <p>R$ ${p.preco.toFixed(2)}</p>
+    <button class="btn btn-vermelho" onclick="adicionarAoCarrinho('${p.nome}', ${p.preco})">Adicionar</button>
+  </div>`);
+});
+</script>
+</div>
+
+<!-- Tapioca -->
+<h2>Tapioca</h2>
+<div class="row">
+<script>
+const tapioca = [
+  {nome:"Queijo Coalho", preco:15},
+  {nome:"Queijo com Presunto", preco:18},
+  {nome:"Frango com Queijo Coalho", preco:20},
+  {nome:"Frango com Catupiry", preco:20},
+  {nome:"Carne do Sol com Queijo Coalho", preco:22},
+  {nome:"Carne do Sol com Catupiry", preco:22},
+  {nome:"Charque com Queijo Coalho", preco:22},
+  {nome:"Charque com Catupiry", preco:22},
+  {nome:"Atum com Queijo Coalho", preco:22},
+  {nome:"Romeu e Julieta", preco:20},
+  {nome:"Coco com Queijo", preco:18},
+  {nome:"Coco, Queijo e Leite Condensado", preco:20},
+  {nome:"Banana, Queijo, Canela e Açúcar", preco:20},
+  {nome:"Brigadeiro com Queijo", preco:22},
+  {nome:"Atum", preco:22},
+];
+tapioca.forEach(p => {
+  document.write(`
+  <div class="col-md-4 produto text-center border p-3 rounded">
+    <h3>${p.nome}</h3>
+    <p>R$ ${p.preco.toFixed(2)}</p>
+    <button class="btn btn-vermelho" onclick="adicionarAoCarrinho('${p.nome}', ${p.preco})">Adicionar</button>
+  </div>`);
+});
+</script>
+</div>
+
+<!-- Cuscuz Recheado -->
+<h2>Cuscuz Recheado</h2>
+<div class="row">
+<script>
+const cuscuzRecheado = [
+  {nome:"Charque c/ queijo coalho", preco:20},
+  {nome:"Carne do sol c/ queijo coalho", preco:20},
+  {nome:"Frango c/ queijo coalho", preco:20},
+  {nome:"Queijo coalho", preco:17},
+  {nome:"Atum", preco:20},
+  {nome:"Atum c/ queijo coalho", preco:20},
+];
+cuscuzRecheado.forEach(p => {
+  document.write(`
+  <div class="col-md-4 produto text-center border p-3 rounded">
+    <h3>${p.nome}</h3>
+    <p>R$ ${p.preco.toFixed(2)}</p>
+    <button class="btn btn-vermelho" onclick="adicionarAoCarrinho('${p.nome}', ${p.preco})">Adicionar</button>
+  </div>`);
+});
+</script>
+</div>
+
+<!-- Cuscuz Tradicional -->
+<h2>Cuscuz Tradicional</h2>
+<div class="row">
+<script>
+const cuscuzTrad = [
+  {nome:"Carne do sol", preco:25},
+  {nome:"Calabresa", preco:22},
+  {nome:"Ovos 2 unidades", preco:15},
+];
+cuscuzTrad.forEach(p => {
+  document.write(`
+  <div class="col-md-4 produto text-center border p-3 rounded">
+    <h3>${p.nome}</h3>
+    <p>R$ ${p.preco.toFixed(2)}</p>
+    <button class="btn btn-vermelho" onclick="adicionarAoCarrinho('${p.nome}', ${p.preco})">Adicionar</button>
+  </div>`);
+});
+</script>
+</div>
+
+<!-- Macaxeira Cozida -->
+<h2>Macaxeira Cozida</h2>
+<div class="row">
+<script>
+const macaxeira = [
+  {nome:"Carne do sol", preco:25},
+  {nome:"Calabresa", preco:23},
+  {nome:"Ovos 2 unidades", preco:15},
+];
+macaxeira.forEach(p => {
+  document.write(`
+  <div class="col-md-4 produto text-center border p-3 rounded">
+    <h3>${p.nome}</h3>
+    <p>R$ ${p.preco.toFixed(2)}</p>
+    <button class="btn btn-vermelho" onclick="adicionarAoCarrinho('${p.nome}', ${p.preco})">Adicionar</button>
+  </div>`);
+});
+</script>
+</div>
+
+<!-- Sopa -->
+<h2>Sopa</h2>
+<div class="row">
+<script>
+const sopa = [
+  {nome:"Sopa de carne", preco:18},
+  {nome:"Sopa de charque", preco:18},
+  {nome:"Sopa de mocotó", preco:18},
+];
+sopa.forEach(p => {
+  document.write(`
+  <div class="col-md-4 produto text-center border p-3 rounded">
+    <h3>${p.nome}</h3>
+    <p>R$ ${p.preco.toFixed(2)}</p>
+    <button class="btn btn-vermelho" onclick="adicionarAoCarrinho('${p.nome}', ${p.preco})">Adicionar</button>
+  </div>`);
+});
+</script>
+</div>
+
+<!-- Bebidas -->
+<h2>Bebidas</h2>
+<div class="row">
+<script>
+const bebidas = [
+  {nome:"Caldo de Cana (500ml)", preco:7},
+  {nome:"Caldo de Cana (300ml)", preco:4},
+  {nome:"Jarra de Caldo de Cana", preco:18},
+  {nome:"Suco de Laranja (400ml)", preco:7},
+  {nome:"Jarra de Suco de Laranja", preco:20},
+  {nome:"Refrigerante (lata)", preco:6},
+  {nome:"Refrigerante (litro)", preco:12},
+  {nome:"Suco Del Valle em lata", preco:6},
+  {nome:"Chá Gelado", preco:6},
+  {nome:"Schweppes", preco:6},
+  {nome:"Água Mineral com gás", preco:3},
+  {nome:"Água Mineral sem gás", preco:3},
+  {nome:"Água Tônica", preco:6},
+  {nome:"H2OH", preco:7},
+  {nome:"Cappuccino", preco:10},
+  {nome:"Café Preto", preco:4},
+  {nome:"Café com Leite", preco:5},
+  {nome:"Devassa", preco:7},
+  {nome:"Heineken Long Neck", preco:10},
+  {nome:"Skol (lata)", preco:6},
+  {nome:"Amstel (lata)", preco:8},
+];
+bebidas.forEach(p => {
+  document.write(`
+  <div class="col-md-4 produto text-center border p-3 rounded">
+    <h3>${p.nome}</h3>
+    <p>R$ ${p.preco.toFixed(2)}</p>
+    <button class="btn btn-vermelho" onclick="adicionarAoCarrinho('${p.nome}', ${p.preco})">Adicionar</button>
+  </div>`);
+});
+</script>
+</div>
+
+<div class="text-center mt-5 mb-5">
+  <a href="carrinho.html" class="btn btn-primary">Ir para o Carrinho</a>
+</div>
+</div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+        <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Localização</h4>
+                <p><i class="fa fa-map-marker" aria-hidden="true"></i>
+</i> Orla da Atalaia</p>
+                <p><i class="fa fa-phone"></i> (79) 9 99870-2117</p>
+                           </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">REDES SOCIAIS</h4>
+                <div class="d-flex justify-content-start">
+    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="http://facebook.com/al9870" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.instagram.com/pastel_do_miro/" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+</div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">FUNCIONAMENTO</h4>
+                <div>
+                    <h6 class="text-white text-uppercase">Seg - Dom</h6>
+                    <p>17 hrs - 23 hrs</p>
+                </div>
+            </div>
+         <div class="col-lg-3 col-md-6 mb-5">
+    <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">PAGAMENTOS</h4>
+    <div class="d-flex flex-wrap">
+        <img src="images/visa-seeklogo.png" alt="Visa" class="mr-2 mb-2" style="height:40px;">
+        <img src="images/mastercard.png" alt="MasterCard" class="mr-2 mb-2" style="height:40px;">
+        <img src="images/Elo_logo.png" alt="Elo" class="mr-2 mb-2" style="height:40px;">
+        <img src="images/banese_card_logo.jpg" alt="Banese" class="mr-2 mb-2" style="height:40px;">
+        <img src="images/hipercard.png" alt="hipercard" class="mr-2 mb-2" style="height:40px;">
+
+    </div>
+</div>
+        </div>
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="mb-2 text-white">© 2025 Pastel do <a class="font-weight-bold" href="#">Miro</a>. Todos os direitos reservados.</p>
+        </div>
+    </div>
+    <!-- Footer End -->
+</div>
+
+<script>
+function adicionarAoCarrinho(nome, preco, selectId){
+  const select = document.getElementById(selectId);
+  const sabor = select ? select.value || "Sem sabor" : "Sem sabor";
+
+  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  carrinho.push({produto: nome, sabor: sabor, preco: preco, qtd: 1});
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+  alert(nome + " (" + sabor + ") adicionado ao carrinho!");
+}
+</script>
+<script src="js/jquery.min.js"></script> 
+<script src="js/popper.min.js"></script> 
+<script src="js/bootstrap.bundle.min.js"></script> 
+<script src="js/plugin.js"></script> 
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script src="js/custom.js"></script>
+</body>
+</html>
